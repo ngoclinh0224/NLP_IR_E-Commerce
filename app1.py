@@ -8,7 +8,7 @@ st.title("🔍 Amazon Product Search")
 
 model_choice = st.sidebar.selectbox(
     "Choose retrieval model",
-    ["BM25", "BM25 + BERT", "BM25 + BERT (fine-tuned)"]
+    ["BM25", "BM25 + BERT"]
 )
 
 query = st.text_input("Enter your search query")
@@ -24,4 +24,5 @@ if query:
         st.markdown(f"### {row['product_name']}")
         st.write(row["about_product"])
         st.divider()
+
 
