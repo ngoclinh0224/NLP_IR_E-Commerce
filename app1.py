@@ -20,9 +20,14 @@ if query:
     elif model_choice == "BM25 + BERT":
         results = search_bm25_bert(query)
 
-    for _, row in results.iterrows():
+   for i, row in results.iterrows():
         st.markdown(f"### {row['product_name']}")
-        st.write(row["about_product"])
-        st.divider()
+        st.write(row['about_product'])
+        st.write(f"⭐ Rating: {row['rating']}")
+
+        #LINK SẢN PHẨM
+        st.markdown(f"🔗 [View product on Amazon]({row['product_link']})")
+        st.markdown("---")
+
 
 
